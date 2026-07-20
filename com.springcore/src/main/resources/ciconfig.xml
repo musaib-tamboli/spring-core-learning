@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:c="http://www.springframework.org/schema/c"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+                           https://www.springframework.org/schema/beans/spring-beans.xsd">
+
+  <bean id="certi" 
+          class="com.springcore.constructorinjection.Certificate" 
+          c:name="Introduction to Spring Framework"/>
+
+    <!-- Maps to: Person(String name, int personId, Certificate certi) -->
+<!--     <bean id="person" 
+          class="com.springcore.ci.Person" 
+          c:name="Asad"
+          c:personId="11"
+          c:certi-ref="certi"
+          c:list="Java, Python , C++ , C , PHP"/> -->
+ 
+     <bean id="person" 
+          class="com.springcore.constructorinjection.Person" 
+          c:name="Asad"
+          c:personId="11"
+          c:certi-ref="certi">
+          <constructor-arg name="list">
+            <list>
+                <value>Java</value>
+                <value>Spring</value>
+                <value>Maven</value>
+            </list>
+        </constructor-arg>
+          </bean>
+ <bean class="com.springcore.constructorinjection.Addition" name="addition">
+ <constructor-arg index="0" type="int" value="10"/>
+<constructor-arg index="1" type="int" value="20"/>
+ </bean>
+</beans>
+
+

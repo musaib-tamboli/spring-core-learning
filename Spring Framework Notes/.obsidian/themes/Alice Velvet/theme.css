@@ -1,0 +1,531 @@
+/*
+Alice Velvet for Obsidian
+Palette: Onyx #241929, Wineshade #5A4864, Gin Tonic #E5E6E1,
+False Goat's Beard #F696B3, Red Suits #DD1440, Claret #840B2A.
+
+Suggested fonts:
+- Titles: Cormorant Garamond
+- Headings: Yeseva One
+- Body: Nunito
+- Accent: Emilys Candy
+
+Install the fonts locally or through a font manager for the best result.
+*/
+
+.theme-dark,
+.theme-light {
+  --alice-onyx: #241929;
+  --alice-onyx-deep: #1a1120;
+  --alice-wineshade: #5a4864;
+  --alice-wineshade-soft: #73607d;
+  --alice-gin-tonic: #e5e6e1;
+  --alice-gin-tonic-muted: #c9cbc5;
+  --alice-pink: #f696b3;
+  --alice-red-suits: #dd1440;
+  --alice-claret: #840b2a;
+  --alice-line: rgba(229, 230, 225, 0.15);
+  --alice-line-strong: rgba(246, 150, 179, 0.32);
+  --alice-glow: rgba(221, 20, 64, 0.2);
+
+  --font-interface-theme: "Nunito", "Avenir Next", system-ui, sans-serif;
+  --font-text-theme: "Nunito", "Avenir Next", system-ui, sans-serif;
+  --font-monospace-theme: "JetBrains Mono", "SFMono-Regular", Consolas, monospace;
+  --font-editor-theme: var(--font-text-theme);
+
+  --background-primary: var(--alice-onyx);
+  --background-primary-alt: var(--alice-onyx-deep);
+  --background-secondary: #2d2033;
+  --background-secondary-alt: #211827;
+  --background-modifier-border: var(--alice-line);
+  --background-modifier-border-hover: rgba(229, 230, 225, 0.25);
+  --background-modifier-border-focus: var(--alice-pink);
+  --background-modifier-form-field: rgba(229, 230, 225, 0.07);
+  --background-modifier-form-field-highlighted: rgba(229, 230, 225, 0.1);
+  --background-modifier-hover: rgba(246, 150, 179, 0.1);
+  --background-modifier-active: rgba(132, 11, 42, 0.48);
+  --background-modifier-selected: rgba(90, 72, 100, 0.52);
+
+  --text-normal: var(--alice-gin-tonic);
+  --text-muted: rgba(229, 230, 225, 0.68);
+  --text-faint: rgba(229, 230, 225, 0.44);
+  --text-on-accent: var(--alice-gin-tonic);
+  --text-accent: #ffb3c8;
+  --text-accent-hover: #ffd1de;
+  --text-selection: rgba(246, 150, 179, 0.28);
+  --text-highlight-bg: rgba(221, 20, 64, 0.3);
+
+  --interactive-normal: rgba(229, 230, 225, 0.08);
+  --interactive-hover: rgba(246, 150, 179, 0.16);
+  --interactive-accent: var(--alice-claret);
+  --interactive-accent-hover: #9b1136;
+  --interactive-success: #d9dccf;
+
+  --accent-h: 345;
+  --accent-s: 85%;
+  --accent-l: 46%;
+  --color-accent: var(--alice-red-suits);
+  --color-accent-1: #ee3c62;
+  --color-accent-2: var(--alice-red-suits);
+
+  --titlebar-background: var(--alice-onyx-deep);
+  --titlebar-background-focused: var(--alice-onyx);
+  --ribbon-background: var(--alice-onyx-deep);
+  --tab-container-background: var(--alice-onyx-deep);
+  --tab-text-color: rgba(229, 230, 225, 0.68);
+  --tab-text-color-focused-active: var(--alice-gin-tonic);
+  --tab-outline-color: transparent;
+
+  --nav-item-color: rgba(229, 230, 225, 0.72);
+  --nav-item-color-hover: var(--alice-gin-tonic);
+  --nav-item-color-active: var(--alice-gin-tonic);
+  --nav-item-background-hover: rgba(246, 150, 179, 0.08);
+  --nav-item-background-active: rgba(132, 11, 42, 0.42);
+
+  --blockquote-border-color: var(--alice-red-suits);
+  --blockquote-color: rgba(229, 230, 225, 0.82);
+  --code-background: rgba(229, 230, 225, 0.09);
+  --code-normal: #ffd1de;
+  --tag-color: var(--alice-gin-tonic);
+  --tag-background: rgba(132, 11, 42, 0.7);
+  --tag-background-hover: rgba(221, 20, 64, 0.78);
+  --checkbox-color: var(--alice-wineshade-soft);
+  --checkbox-color-hover: var(--alice-pink);
+  --checkbox-marker-color: var(--alice-gin-tonic);
+
+  --radius-s: 5px;
+  --radius-m: 7px;
+  --radius-l: 8px;
+}
+
+body {
+  letter-spacing: 0;
+}
+
+.workspace,
+.workspace-split,
+.workspace-tabs,
+.workspace-leaf,
+.workspace-leaf-content,
+.view-content,
+.markdown-source-view,
+.markdown-reading-view {
+  background-color: var(--background-primary);
+}
+
+.workspace-leaf-content {
+  background:
+    linear-gradient(135deg, rgba(132, 11, 42, 0.14), transparent 30%),
+    var(--background-primary);
+}
+
+.workspace-ribbon,
+.side-dock-ribbon,
+.mod-left-split,
+.mod-right-split,
+.workspace-sidedock-vault-profile {
+  border-color: var(--alice-line);
+}
+
+.mod-left-split,
+.mod-right-split {
+  background: var(--background-secondary-alt);
+}
+
+.titlebar,
+.workspace-tab-header-container {
+  border-bottom: 1px solid var(--alice-line);
+}
+
+.workspace-tab-header {
+  border-radius: var(--radius-m) var(--radius-m) 0 0;
+}
+
+.workspace-tab-header.is-active {
+  background: linear-gradient(180deg, rgba(90, 72, 100, 0.52), rgba(36, 25, 41, 0.95));
+  box-shadow: inset 0 2px 0 var(--alice-claret);
+}
+
+.view-header {
+  border-bottom: 1px solid var(--alice-line);
+  background: rgba(26, 17, 32, 0.94);
+}
+
+.view-header-title {
+  color: var(--alice-gin-tonic);
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: 1.2rem;
+  font-style: italic;
+  font-weight: 600;
+}
+
+.nav-folder-title,
+.nav-file-title {
+  border-radius: var(--radius-m);
+  font-weight: 600;
+}
+
+.nav-folder-title-content::first-letter,
+.nav-file-title-content::first-letter {
+  color: var(--alice-pink);
+}
+
+.nav-folder.mod-root > .nav-folder-title {
+  color: var(--alice-pink);
+  font-family: "Emilys Candy", "Cormorant Garamond", Georgia, serif;
+  font-size: 0.95rem;
+}
+
+.markdown-source-view.mod-cm6 .cm-scroller,
+.markdown-preview-view {
+  font-family: var(--font-text-theme);
+  font-size: 17px;
+  line-height: 1.72;
+}
+
+.markdown-preview-view {
+  max-width: 940px;
+  margin-inline: auto;
+  padding: 34px clamp(22px, 4vw, 56px);
+}
+
+.markdown-source-view.mod-cm6 .cm-content {
+  caret-color: var(--alice-pink);
+  padding: 34px clamp(22px, 4vw, 56px);
+}
+
+.cm-s-obsidian,
+.markdown-preview-view {
+  color: var(--text-normal);
+}
+
+.inline-title,
+.markdown-preview-view h1,
+.HyperMD-header-1 {
+  color: var(--alice-gin-tonic);
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-style: italic;
+  font-weight: 600;
+  letter-spacing: 0;
+}
+
+.inline-title {
+  margin-bottom: 1.1em;
+  font-size: 2.8rem;
+  line-height: 1.02;
+  text-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+}
+
+.markdown-preview-view h1,
+.HyperMD-header-1 {
+  font-size: 2.35rem;
+  line-height: 1.08;
+}
+
+.markdown-preview-view h2,
+.markdown-preview-view h3,
+.markdown-preview-view h4,
+.markdown-preview-view h5,
+.markdown-preview-view h6,
+.HyperMD-header-2,
+.HyperMD-header-3,
+.HyperMD-header-4,
+.HyperMD-header-5,
+.HyperMD-header-6 {
+  color: #ffd1de;
+  font-family: "Yeseva One", Georgia, serif;
+  font-weight: 400;
+  letter-spacing: 0;
+}
+
+.markdown-preview-view h2,
+.HyperMD-header-2 {
+  color: var(--alice-pink);
+  font-size: 1.78rem;
+}
+
+.markdown-preview-view h3,
+.HyperMD-header-3 {
+  color: var(--alice-gin-tonic);
+  font-size: 1.42rem;
+}
+
+.markdown-preview-view h4,
+.HyperMD-header-4 {
+  color: var(--alice-gin-tonic-muted);
+  font-size: 1.2rem;
+}
+
+.markdown-preview-view h1::after,
+.markdown-preview-view h2::after {
+  content: "";
+  display: block;
+  width: 4.5rem;
+  height: 2px;
+  margin-top: 0.35em;
+  background: linear-gradient(90deg, var(--alice-red-suits), transparent);
+}
+
+a,
+.cm-hmd-internal-link,
+.cm-link,
+.markdown-preview-view .internal-link {
+  color: var(--text-accent);
+  border-bottom: 1px solid rgba(246, 150, 179, 0.42);
+}
+
+a:hover,
+.cm-hmd-internal-link:hover,
+.cm-link:hover,
+.markdown-preview-view .internal-link:hover {
+  color: var(--text-accent-hover);
+}
+
+strong,
+.cm-strong {
+  color: #fff1f5;
+  font-weight: 800;
+}
+
+em,
+.cm-em {
+  color: var(--alice-pink);
+}
+
+mark,
+.cm-highlight {
+  border-radius: 4px;
+  padding-inline: 0.15em;
+  color: var(--alice-gin-tonic);
+  background: var(--text-highlight-bg);
+}
+
+hr {
+  border-color: transparent;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--alice-line-strong), transparent);
+}
+
+blockquote {
+  border-left: 5px solid var(--blockquote-border-color);
+  border-radius: 0 var(--radius-m) var(--radius-m) 0;
+  background: rgba(90, 72, 100, 0.26);
+  color: var(--blockquote-color);
+  font-style: italic;
+  padding: 0.75em 1em;
+}
+
+code,
+pre,
+.cm-inline-code,
+.markdown-rendered code {
+  border: 1px solid rgba(246, 150, 179, 0.16);
+  border-radius: var(--radius-s);
+}
+
+pre,
+.markdown-rendered pre {
+  background: rgba(26, 17, 32, 0.9);
+  box-shadow: inset 0 0 0 1px rgba(229, 230, 225, 0.07);
+}
+
+table {
+  border-collapse: separate;
+  border-spacing: 0;
+  border: 1px solid var(--alice-line);
+  border-radius: var(--radius-l);
+  overflow: hidden;
+}
+
+th {
+  background: rgba(90, 72, 100, 0.45);
+  color: var(--alice-gin-tonic);
+  font-family: "Yeseva One", Georgia, serif;
+  font-weight: 400;
+}
+
+td,
+th {
+  border-color: var(--alice-line);
+}
+
+.metadata-container,
+.search-result,
+.tree-item-self,
+.modal,
+.prompt {
+  border-radius: var(--radius-l);
+}
+
+.metadata-container,
+.modal,
+.prompt {
+  border: 1px solid var(--alice-line);
+  background: #2d2033;
+}
+
+.suggestion-item.is-selected,
+.vertical-tab-nav-item.is-active,
+.setting-item-control button.mod-cta,
+button.mod-cta {
+  background: var(--alice-claret);
+  color: var(--alice-gin-tonic);
+}
+
+button,
+.clickable-icon {
+  border-radius: var(--radius-m);
+}
+
+button:hover,
+.clickable-icon:hover {
+  background-color: rgba(246, 150, 179, 0.13);
+}
+
+.status-bar {
+  border-top: 1px solid var(--alice-line);
+  background: rgba(26, 17, 32, 0.96);
+  color: var(--text-muted);
+}
+
+.tag,
+a.tag {
+  border: 1px solid rgba(246, 150, 179, 0.22);
+  border-radius: 999px;
+  padding: 0.12em 0.62em;
+  font-family: "Emilys Candy", "Cormorant Garamond", Georgia, serif;
+  font-size: 0.82em;
+}
+
+input[type="checkbox"] {
+  border-radius: 4px;
+}
+
+input[type="checkbox"]:checked {
+  background-color: var(--alice-claret);
+  border-color: var(--alice-pink);
+}
+
+.task-list-item-checkbox:checked {
+  box-shadow: 0 0 0 2px rgba(246, 150, 179, 0.18);
+}
+
+.callout {
+  border: 1px solid rgba(246, 150, 179, 0.18);
+  border-left-width: 5px;
+  border-radius: var(--radius-l);
+  background: rgba(90, 72, 100, 0.22);
+}
+
+.callout-title {
+  color: var(--alice-gin-tonic);
+  font-family: "Yeseva One", Georgia, serif;
+  font-weight: 400;
+}
+
+.callout[data-callout="quote"],
+.callout[data-callout="cite"] {
+  border-left-color: var(--alice-pink);
+}
+
+.callout[data-callout="warning"],
+.callout[data-callout="danger"],
+.callout[data-callout="error"] {
+  border-left-color: var(--alice-red-suits);
+}
+
+.callout[data-callout="tip"],
+.callout[data-callout="success"] {
+  border-left-color: var(--alice-gin-tonic-muted);
+}
+
+.cm-activeLine,
+.cm-activeLineGutter {
+  background-color: rgba(229, 230, 225, 0.055);
+}
+
+.markdown-source-view.mod-cm6 .cm-selectionBackground,
+.markdown-preview-view ::selection,
+.markdown-source-view.mod-cm6 ::selection {
+  background-color: var(--text-selection);
+}
+
+.markdown-source-view.mod-cm6 .cm-editor .cm-cursor {
+  border-left-color: var(--alice-pink);
+}
+
+.markdown-source-view.mod-cm6 .cm-editor .cm-gutters {
+  background: transparent;
+  border-right: 1px solid var(--alice-line);
+  color: var(--text-faint);
+}
+
+.cm-fold-indicator .collapse-indicator,
+.collapse-indicator {
+  color: var(--alice-pink);
+}
+
+.is-flashing {
+  background-color: rgba(221, 20, 64, 0.2);
+}
+
+.empty-state-title {
+  color: var(--alice-pink);
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: 2rem;
+  font-style: italic;
+}
+
+.empty-state-action {
+  border-radius: var(--radius-m);
+  background: rgba(90, 72, 100, 0.36);
+}
+
+.menu {
+  border: 1px solid var(--alice-line);
+  border-radius: var(--radius-l);
+  background: #2d2033;
+}
+
+.menu-item:hover,
+.menu-item.selected {
+  background: rgba(132, 11, 42, 0.5);
+}
+
+.progress-bar {
+  background-color: rgba(229, 230, 225, 0.12);
+}
+
+.progress-bar-subline {
+  background-color: var(--alice-red-suits);
+}
+
+.graph-view.color-fill {
+  color: var(--alice-wineshade-soft);
+}
+
+.graph-view.color-fill-highlight {
+  color: var(--alice-pink);
+}
+
+.graph-view.color-line {
+  color: rgba(229, 230, 225, 0.22);
+}
+
+.graph-view.color-line-highlight {
+  color: var(--alice-red-suits);
+}
+
+.graph-view.color-text {
+  color: var(--alice-gin-tonic);
+}
+
+@media (max-width: 600px) {
+  .inline-title {
+    font-size: 2.2rem;
+  }
+
+  .markdown-preview-view,
+  .markdown-source-view.mod-cm6 .cm-content {
+    padding-inline: 22px;
+  }
+}

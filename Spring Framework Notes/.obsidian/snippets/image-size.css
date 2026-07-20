@@ -1,0 +1,6 @@
+.markdown-rendered img,
+.markdown-source-view.mod-cm6 .image-embed img {
+    width: 600px !important;
+    max-width: 600px !important;
+    height: auto !important;
+}

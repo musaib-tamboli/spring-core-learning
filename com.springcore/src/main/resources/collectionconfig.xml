@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+                           https://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+
+<bean name="emp1" class="com.springcore.collectionsinjection.Emp">
+<property name="name" value="Jhon"/>
+<property name="phones"> <!--  Is there is 1 Element in any collection  then There is not need use that Collection tag <List>,<Set>-->
+<list>
+<value>8520741963</value>
+<value>7418520963</value>
+<value>789541230</value>
+<null></null>
+</list>
+</property>
+<property name="address">
+<set>
+<value>Sangli</value>
+<value>Maharashtra</value>
+<value>India</value>
+
+</set>
+</property>
+
+<property name="courses">
+<map>
+<entry key="java" value="2 Months"/>
+<entry key="python" value="1.2 Months"/>
+<entry key="c" value="1 Months"/>
+
+</map>
+</property>
+</bean>
+
+</beans>
