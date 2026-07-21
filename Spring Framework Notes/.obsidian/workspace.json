@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "01-Spring Core/01-Introduction To Spring Framework.md",
+                "file": "00-home/Prompt For Creating a Notes.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "01-Introduction To Spring Framework"
+              "title": "Prompt For Creating a Notes"
             }
           }
         ]
@@ -185,9 +185,10 @@
   },
   "active": "fa7869f6a02b4fbb",
   "lastOpenFiles": [
+    "01-Spring Core/14.1-Spring Bean Lifecycle.md",
+    "01-Spring Core/01-Introduction To Spring Framework.md",
     "01-Introduction To Spring Framework.md",
     "01-Spring Core/Working of Simple Spring Code.md",
-    "01-Spring Core/14-Spring Bean Lifecycle.md",
     "01-Spring Core/13-Constructor Ambiguity Problem.md",
     "01-Spring Core/12-Constructor Injection.md",
     "01-Spring Core/11-Injecting Reference Type.md",
@@ -200,7 +201,6 @@
     "01-Spring Core/04-POJO.md",
     "01-Spring Core/03-Spring Framework Modules.md",
     "01-Spring Core/02-Spring Framework Architecture.md",
-    "01-Spring Core/01-Introduction To Spring Framework.md",
     "01-Spring Core",
     "New folder",
     "Sample Notes Template.md",
