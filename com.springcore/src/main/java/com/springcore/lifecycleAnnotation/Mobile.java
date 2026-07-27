@@ -8,7 +8,7 @@ public class Mobile {
     private String brand;
 
     public Mobile() {
-        System.out.println("1. Mobile Object Created");
+        System.out.println("1. Mobile Object Created"); 
     }
 
     public void setBrand(String brand) {
